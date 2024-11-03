@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.user.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.wang.pojo.RUser">
+        <id property="userId" column="r_id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="idNumber" column="id_number" jdbcType="VARCHAR"/>
+        <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        r_id,name,password,
+        phone,sex,id_number,
+        avatar,status
+    </sql>
+
+    <select id="findByUserName" resultType="com.wang.pojo.RUser" parameterType="string">
+        select <include refid="Base_Column_List">
+    </include> from r_user r where r.name like concat('%',#{username},'%')
+    </select>
+    <select id="findAll" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from r_user
+    </select>
+    <select id="findById" resultType="com.wang.pojo.RUser" parameterType="string">
+        select <include refid="Base_Column_List"/> from r_user as r where r.username like concat('%',#{username},'%')
+    </select>
+    <select id="getAllUsers" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from r_user
+    </select>
+</mapper>
