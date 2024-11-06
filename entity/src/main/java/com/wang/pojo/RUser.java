@@ -32,17 +32,6 @@ public class RUser implements Serializable {
 
     }
 
-    public RUser(Long userId, String name, String password, String phone, String sex, String idNumber, String avatar, Integer status,List<Orders> userOrders) {
-        this.userId = userId;
-        this.name = name;
-        this.password = password;
-        this.phone = phone;
-        this.sex = sex;
-        this.idNumber = idNumber;
-        this.avatar = avatar;
-        this.status = status;
-        this.userOrders=userOrders;
-    }
 
     public Long getUserId() {
         return userId;

@@ -13,6 +13,8 @@
         <module>feign-api</module>
         <module>gateway</module>
         <module>entity</module>
+        <module>dish-service</module>
+        <module>employee-service</module>
     </modules>
 
     <packaging>pom</packaging>

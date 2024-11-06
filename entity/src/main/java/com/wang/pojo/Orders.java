@@ -89,22 +89,6 @@ public class Orders implements Serializable {
 
     }
 
-    public Orders(Long id, String number, Integer status, Long userId, Long addressBookId, Date orderTime, Date checkoutTime, Integer payMethod, BigDecimal amount, String remark, String phone, String address, String userName, String consignee) {
-        this.id = id;
-        this.number = number;
-        this.status = status;
-        this.userId = userId;
-        this.addressBookId = addressBookId;
-        this.orderTime = orderTime;
-        this.checkoutTime = checkoutTime;
-        this.payMethod = payMethod;
-        this.amount = amount;
-        this.remark = remark;
-        this.phone = phone;
-        this.address = address;
-        this.userName = userName;
-        this.consignee = consignee;
-    }
 
     public Long getId() {
         return id;
