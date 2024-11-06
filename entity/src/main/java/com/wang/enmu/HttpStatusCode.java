@@ -1,5 +1,8 @@
 package com.wang.enmu;
 
+import lombok.Getter;
+
+@Getter
 public enum HttpStatusCode {
 
     // 1xx 信息性状态码
@@ -78,14 +81,6 @@ public enum HttpStatusCode {
     HttpStatusCode(int code, String description) {
         this.code = code;
         this.description = description;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     @Override
